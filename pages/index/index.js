@@ -5,21 +5,17 @@ Page({
     code: ''
   },
   onLoad: function () {
-    // tt.getSetting({
-    //   success: function(res) {
-    //     if (res.authSetting.)
-    //   }
-    // })
+    let that = this
     tt.login({
       success(res) {
-        this.setData({
+        that.setData({
           code: res.code
         })
-        console.log(`login调用成功${res.code} ${res.anonymousCode}`);
+        console.log(`login 调用成功`, res);
       },
       fail(res) {
-        console.log(`login调用失败`);
+        console.log(`login 调用失败`);
       }
-    })
+    });
   },
 })
